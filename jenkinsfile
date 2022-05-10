@@ -10,6 +10,7 @@ pipeline{
   stages {
    
      stage('Check Scm Changelog') {
+      checkout scm
             steps {
                 script {
                     def changeLogSets = currentBuild.changeSets

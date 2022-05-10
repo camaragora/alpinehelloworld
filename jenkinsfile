@@ -8,20 +8,6 @@ pipeline{
   
   agent none
   stages {
-  
-  stage('Init') {
-      steps {
-        script {
-          COMMIT_MESSAGE = git.commitMessage()
-          COMMIT_AUTHOR = git.commitAuthor()
-
-          build.setBuildDescription(
-            message: COMMIT_MESSAGE,
-            description: COMMIT_AUTHOR
-          )
-        }
-      }
-    }
    
      stage('Check Scm Changelog') {
        agent any
@@ -50,6 +36,20 @@ pipeline{
                 }
             }
         }
+	
+	stage('Init') {
+      steps {
+        script {
+          COMMIT_MESSAGE = git.commitMessage()
+          COMMIT_AUTHOR = git.commitAuthor()
+
+          build.setBuildDescription(
+            message: COMMIT_MESSAGE,
+            description: COMMIT_AUTHOR
+          )
+        }
+      }
+    }
   
      stage('Build Image') {
        agent any

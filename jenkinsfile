@@ -10,8 +10,8 @@ pipeline{
   stages {
    
      stage('Check Scm Changelog') {
-      checkout scm
             steps {
+	    checkout scm
                 script {
                     def changeLogSets = currentBuild.changeSets
                     for (int i = 0; i < changeLogSets.size(); i++) {

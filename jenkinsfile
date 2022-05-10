@@ -6,7 +6,7 @@ pipeline{
      PRODUCTION = "afriboard-production"
   }
   
-  agent none
+  agent any
   stages {
    
      stage('Check Scm Changelog') {

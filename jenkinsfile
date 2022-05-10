@@ -17,7 +17,7 @@ pipeline{
     lastSuccessfulBuild(passedBuilds, currentBuild);
 
     def changeLog = getChangeLog(passedBuilds)
-    echo "changeLog ${changeLog}
+    echo "changeLog ${changeLog}"
 		
                 }
             }

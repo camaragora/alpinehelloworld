@@ -12,6 +12,7 @@ pipeline{
     stage('Check Scm Changelog') {
             steps {
                 script {
+			checkout(scm)
                     def changeLogSets = currentBuild.changeSets
 		    echo "$currentBuild.previousBuild.changeSets"
 		    echo "${changeLogSets}"

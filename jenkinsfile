@@ -6,10 +6,11 @@ pipeline{
      PRODUCTION = "afriboard-production"
   }
   
-  agent any
+  agent none
   stages {
    
      stage('Check Scm Changelog') {
+       agent any
             steps {
                 script {
                     def changeLogSets = currentBuild.changeSets
